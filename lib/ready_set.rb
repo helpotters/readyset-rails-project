@@ -23,6 +23,14 @@ module ReadySet
     configuration.inspect
   end
 
+  def self.status
+    raw_query('SHOW READYSET STATUS')
+  end
+
+  def self.tables
+    raw_query('tables')
+  end
+
   # Executes a raw SQL query against ReadySet. The query is sanitized prior to being executed.
   #
   # @param [Array<Object>] *sql_array the SQL array to be executed against ReadySet
